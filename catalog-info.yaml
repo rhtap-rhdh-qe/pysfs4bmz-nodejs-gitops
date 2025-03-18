@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: pysfs4bmz-nodejs-gitops
+  description: This is GitOps manifest for pysfs4bmz-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=pysfs4bmz-nodejs
+    backstage.io/kubernetes-id: pysfs4bmz-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: pysfs4bmz-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:pysfs4bmz-nodejs
